@@ -1,5 +1,4 @@
-import { Box, Button, Container, Typography } from "@mui/material";
-import Image from "next/image";
+import { Box, Button, Typography } from "@mui/material";
 import flat_image from "@/assets/hero_flat.webp";
 
 const HeroSection = () => {
@@ -21,7 +20,7 @@ const HeroSection = () => {
       <Box
         sx={{
           position: "relative",
-          maxWidth: "800px",
+          maxWidth: "750px",
           background: "rgba(0, 0, 0, 0.5)",
           padding: "30px",
           borderRadius: "8px",
@@ -35,7 +34,7 @@ const HeroSection = () => {
           variant="h3"
           component="h2"
           fontWeight={600}
-          color="primary.main"
+          color="#81c784"
         >
           Click Away!
         </Typography>
@@ -43,8 +42,7 @@ const HeroSection = () => {
           Discover your ideal roommate with ease.
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-          <Button>Make appointment</Button>
-          <Button variant="outlined">Contact us</Button>
+          <Button>Share Your Flat</Button>
         </Box>
       </Box>
     </Box>

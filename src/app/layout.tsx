@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "./globals.css";
 import Providers from "@/lib/Providers/Providers";
+import { Toaster } from "sonner";
 
 const roboto = Roboto({
   weight: "400",
@@ -24,7 +25,10 @@ export default function RootLayout({
       <html lang="en">
         <body className={roboto.className}>
           <AppRouterCacheProvider>
-            <>{children}</>
+            <>
+              <Toaster position="top-center" duration={10} />
+              {children}
+            </>
           </AppRouterCacheProvider>
         </body>
       </html>
