@@ -13,7 +13,7 @@ export const drawerItems = (role: UserRole): DrawerItem[] => {
   const defaultMenus = [
     {
       title: "Profile",
-      path: `${role}/profile`,
+      path: `profile`,
       icon: PersonIcon,
     },
     {
@@ -28,12 +28,12 @@ export const drawerItems = (role: UserRole): DrawerItem[] => {
       roleMenus.push(
         {
           title: "Dashboard",
-          path: `${role}`,
+          path: ``,
           icon: DashboardIcon,
         },
         {
           title: "Manage Users",
-          path: `${role}/manage-users`,
+          path: `${role}/manage_users`,
           icon: GroupIcon,
         }
       );
@@ -42,20 +42,20 @@ export const drawerItems = (role: UserRole): DrawerItem[] => {
     case USERROLE.ADMIN:
       roleMenus.push(
         {
-            title: "Dashboard",
-            path: `${role}`,
-            icon: DashboardIcon,
-          },
-          {
-            title: "Manage Users",
-            path: `${role}/manage-users`,
-            icon: GroupIcon,
-          },
-          {
-            title: "Manage Flats",
-            path: `${role}/manage-flats`,
-            icon: GroupIcon,
-          }
+          title: "Dashboard",
+          path: ``,
+          icon: DashboardIcon,
+        },
+        {
+          title: "Manage Users",
+          path: `${role}/manage_users`,
+          icon: GroupIcon,
+        },
+        {
+          title: "Manage Flats",
+          path: `${role}/manage_flats`,
+          icon: GroupIcon,
+        }
       );
       break;
 
@@ -63,7 +63,7 @@ export const drawerItems = (role: UserRole): DrawerItem[] => {
       roleMenus.push(
         {
           title: "Dashboard",
-          path: `${role}`,
+          path: ``,
           icon: DashboardIcon,
         },
         {
@@ -77,7 +77,6 @@ export const drawerItems = (role: UserRole): DrawerItem[] => {
           icon: CalendarMonthIcon,
         }
       );
-      break;
     default:
       break;
   }

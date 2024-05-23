@@ -1,11 +1,20 @@
-import React from 'react';
+import { Typography } from "@mui/material";
+import React from "react";
 
 const DashboardPage = () => {
-    return (
-        <div>
-            <h1>this is DashboardPage</h1>
-        </div>
-    );
+  return (
+    <div>
+      <Typography
+        sx={{
+          p: 2,
+        }}
+        variant="h3"
+        component="h3"
+      >
+        Welcome To CozyNest DashBoard
+      </Typography>
+    </div>
+  );
 };
 
 export default DashboardPage;

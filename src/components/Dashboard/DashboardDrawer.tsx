@@ -2,18 +2,15 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-
-import { Avatar, Badge, Stack } from "@mui/material";
-// import AccountMenu from "../AccountMenu/AccountMenu";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import { Stack } from "@mui/material";
 import SideBar from "./SideBar";
-// import { useGetSingleUserQuery } from "@/redux/api/userApi";
+import { useGetMyProfileQuery } from "@/app/redux/api/profileApi";
+import DropdownMenu from "./DropdownMenu";
 
 const drawerWidth = 240;
 
@@ -40,12 +37,10 @@ export default function DashboardDrawer({
     }
   };
 
-  //   const { data, isLoading } = useGetSingleUserQuery({});
-  // console.log(data);
+  const { data, isLoading } = useGetMyProfileQuery({});
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
@@ -76,32 +71,19 @@ export default function DashboardDrawer({
             }}
           >
             <Box>
-              <Typography
-                variant="body2"
-                noWrap
-                component="div"
-                sx={{ color: "rgba(11, 17, 52, 0.6)" }}
-              >
-                {/* Hi, {isLoading ? "Loading..." : data?.name}, */}
-                Hi, User
-              </Typography>
-              <Typography
-                variant="h5"
-                noWrap
-                component="div"
-                sx={{ color: "secondary.main" }}
-              >
-                Welcome to CozyNest
-              </Typography>
+              {!isLoading && (
+                <Typography
+                  variant="h5"
+                  noWrap
+                  component="h5"
+                  sx={{ color: "#000" }}
+                >
+                  Hi, {data?.user?.name}
+                </Typography>
+              )}
             </Box>
             <Stack direction="row" gap={3}>
-              <Badge badgeContent={1} color="primary">
-                <IconButton sx={{ background: "#ffffff" }}>
-                  <NotificationsNoneIcon color="action" />
-                </IconButton>
-              </Badge>
-              {/* <Avatar alt={data?.name} src={data?.profilePhoto} />
-              <AccountMenu /> */}
+              <DropdownMenu />
             </Stack>
           </Box>
         </Toolbar>
@@ -117,7 +99,7 @@ export default function DashboardDrawer({
           onTransitionEnd={handleDrawerTransitionEnd}
           onClose={handleDrawerClose}
           ModalProps={{
-            keepMounted: true
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
