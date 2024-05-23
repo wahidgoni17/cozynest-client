@@ -26,7 +26,7 @@ export default function RootLayout({
         <body className={roboto.className}>
           <AppRouterCacheProvider>
             <>
-              <Toaster position="top-center" duration={10} />
+              <Toaster position="top-center" duration={7000} />
               {children}
             </>
           </AppRouterCacheProvider>

@@ -25,7 +25,7 @@ const Navbar = () => {
             alignItems="center"
             gap={1}
           >
-            <Image src={logo} width={50} height={50} alt="logo" />
+            <Image src={logo} width={40} height={40} alt="logo" />
             <Typography variant="h4" component={Link} href="/" fontWeight={600}>
               Cozy
               <Box component="span" color="primary.main">
@@ -39,11 +39,11 @@ const Navbar = () => {
               Home
             </Typography>
             <Typography>About Us</Typography>
-            <Typography>My Profile</Typography>
-            <Typography>Register</Typography>
-            <Typography>Login</Typography>
+            <Typography component={Link} href="/dashboard">My Profile</Typography>
           </Stack>
-          <AuthButton />
+          <Stack>
+            <AuthButton />
+          </Stack>
         </Stack>
       </Container>
     </Box>

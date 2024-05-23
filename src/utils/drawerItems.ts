@@ -1,0 +1,86 @@
+import { USERROLE } from "@/constants/userRole";
+import { DrawerItem, UserRole } from "@/types";
+//icons
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import GroupIcon from "@mui/icons-material/Group";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PersonIcon from "@mui/icons-material/Person";
+import KeyIcon from "@mui/icons-material/Key";
+
+export const drawerItems = (role: UserRole): DrawerItem[] => {
+  const roleMenus: DrawerItem[] = [];
+
+  const defaultMenus = [
+    {
+      title: "Profile",
+      path: `${role}/profile`,
+      icon: PersonIcon,
+    },
+    {
+      title: "Change Password",
+      path: `change-password`,
+      icon: KeyIcon,
+    },
+  ];
+
+  switch (role) {
+    case USERROLE.SUPER_ADMIN:
+      roleMenus.push(
+        {
+          title: "Dashboard",
+          path: `${role}`,
+          icon: DashboardIcon,
+        },
+        {
+          title: "Manage Users",
+          path: `${role}/manage-users`,
+          icon: GroupIcon,
+        }
+      );
+      break;
+
+    case USERROLE.ADMIN:
+      roleMenus.push(
+        {
+            title: "Dashboard",
+            path: `${role}`,
+            icon: DashboardIcon,
+          },
+          {
+            title: "Manage Users",
+            path: `${role}/manage-users`,
+            icon: GroupIcon,
+          },
+          {
+            title: "Manage Flats",
+            path: `${role}/manage-flats`,
+            icon: GroupIcon,
+          }
+      );
+      break;
+
+    case USERROLE.USER:
+      roleMenus.push(
+        {
+          title: "Dashboard",
+          path: `${role}`,
+          icon: DashboardIcon,
+        },
+        {
+          title: "My Flats",
+          path: `${role}/my_flats`,
+          icon: CalendarMonthIcon,
+        },
+        {
+          title: "My Request",
+          path: `${role}/my_flat_request`,
+          icon: CalendarMonthIcon,
+        }
+      );
+      break;
+    default:
+      break;
+  }
+
+  return [...roleMenus, ...defaultMenus];
+};
