@@ -12,6 +12,24 @@ export const profileAPi = baseApi.injectEndpoints({
       },
       providesTags: [tagTypes.profile],
     }),
+    getMyFlatPosts: build.query({
+      query: () => {
+        return {
+          url: "/profile/flat-posts",
+          method: "GET",
+        };
+      },
+      providesTags: [tagTypes.profile],
+    }),
+    getMyFlatRequest: build.query({
+      query: () => {
+        return {
+          url: "/profile/flat-bookings",
+          method: "GET",
+        };
+      },
+      providesTags: [tagTypes.profile],
+    }),
     updateMyProfile: build.mutation({
       query: (data) => {
         return {
@@ -25,4 +43,9 @@ export const profileAPi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetMyProfileQuery, useUpdateMyProfileMutation } = profileAPi;
+export const {
+  useGetMyProfileQuery,
+  useGetMyFlatPostsQuery,
+  useGetMyFlatRequestQuery,
+  useUpdateMyProfileMutation,
+} = profileAPi;
