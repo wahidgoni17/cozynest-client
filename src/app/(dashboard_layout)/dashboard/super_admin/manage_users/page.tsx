@@ -1,10 +1,10 @@
 "use client";
 import { useGetAllUsersQuery } from "@/app/redux/api/userApi";
-import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import React, { useState } from "react";
-import StatusModal from "./components/StatusModal";
+import StatusModal from "../../admin/manage_users/components/StatusModal";
 
 const ManageUsersPage = () => {
   const { data, isLoading } = useGetAllUsersQuery({});

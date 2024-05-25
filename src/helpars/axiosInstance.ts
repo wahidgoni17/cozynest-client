@@ -16,7 +16,7 @@ instance.interceptors.request.use(
       config.headers.Authorization = accessToken;
     }
 
-    return config.data;
+    return config;
   },
   function (error) {
     // Do something with request error
@@ -26,8 +26,13 @@ instance.interceptors.request.use(
 
 // Add a response interceptor
 instance.interceptors.response.use(
+  //@ts-ignore
   function (response) {
-    return response;
+    const responseObject: ResponseSuccessType = {
+      data: response?.data?.data,
+      meta: response?.data?.meta,
+    };
+    return responseObject;
   },
   function (error) {
     return Promise.reject(error);
