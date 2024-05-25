@@ -4,11 +4,14 @@ import { tagTypes } from "../tag-types";
 export const flatApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     AddFlat: build.mutation({
-      query: (data) => ({
-        url: "/flats/",
-        method: "POST",
-        body: data,
-      }),
+      query: (data) => (
+        console.log(data),
+        {
+          url: "/flats/",
+          method: "POST",
+          body: data,
+        }
+      ),
       invalidatesTags: [tagTypes.flat],
     }),
     updateAFlat: build.mutation({
@@ -26,6 +29,13 @@ export const flatApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.flat],
     }),
+    getAFlatById: build.query({
+      query: (id) => ({
+        url: `/flats/${id}`,
+        method: "GET",
+      }),
+      providesTags: [tagTypes.flat],
+    }),
     deleteAFlat: build.mutation({
       query: (id) => ({
         url: `/flats/${id}`,
@@ -39,6 +49,7 @@ export const flatApi = baseApi.injectEndpoints({
 export const {
   useAddFlatMutation,
   useGetAllFlatsQuery,
+  useGetAFlatByIdQuery,
   useUpdateAFlatMutation,
   useDeleteAFlatMutation,
 } = flatApi;

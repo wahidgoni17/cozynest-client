@@ -37,7 +37,7 @@ const FormHelpar = ({
   const submit: SubmitHandler<FieldValues> = (data) => {
     // console.log(data);
     onSubmit(data);
-    reset();
+    // reset();
   };
 
   return (

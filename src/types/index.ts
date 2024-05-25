@@ -26,7 +26,7 @@ export type ResponseSuccessType = {
 export type IGenericErrorResponse = {
   statusCode: number;
   message: string;
-  errorMessages: IGenericErrorMessage[];
+  errorDetails: any;
 };
 
 export type IGenericErrorMessage = {

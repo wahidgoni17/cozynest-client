@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import flat_image from "@/assets/hero_flat.webp";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -42,7 +43,9 @@ const HeroSection = () => {
           Discover your ideal roommate with ease.
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-          <Button>Share Your Flat</Button>
+          <Link href="/post_a_flat">
+            <Button>Share Your Flat</Button>
+          </Link>
         </Box>
       </Box>
     </Box>

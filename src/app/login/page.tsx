@@ -15,7 +15,7 @@ import InputHelpar from "@/components/Forms/InputHelpar";
 import { loginUser } from "@/Services/Actions/loginUser";
 import { storeUserInfo } from "@/Services/auth.service";
 
-export const validationSchema = z.object({
+const validationSchema = z.object({
   email: z.string().email("Please enter a valid email address!"),
   password: z.string().min(6, "Must be at least 6 characters"),
 });
