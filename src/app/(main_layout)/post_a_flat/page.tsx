@@ -22,10 +22,21 @@ const defaultValues = {
 };
 
 const PostAFlatPage = () => {
-  const { id } = getUserInfo();
-
   const router = useRouter();
-  // console.log(id);
+  const userInfo = getUserInfo();
+  const id = userInfo?.id;
+
+  if (!id) {
+    // Handle the case where user info is not available or invalid
+    return (
+      <Container>
+        <Typography variant="h6" color="error">
+          Unable to fetch user information. Please log in again.
+        </Typography>
+      </Container>
+    );
+  }
+
   const handleFormSubmit = async (values: FieldValues) => {
     const data = {
       userId: id,
@@ -52,6 +63,7 @@ const PostAFlatPage = () => {
       console.error(err);
     }
   };
+
   return (
     <Container
       sx={{
@@ -101,7 +113,7 @@ const PostAFlatPage = () => {
           <Grid item xs={12} sm={12} md={4}>
             <InputHelpar
               name="utilitiesDescription"
-              label="UtilitiesDescription"
+              label="Utilities Description"
               fullWidth={true}
               sx={{ mb: 2 }}
             />
@@ -117,7 +129,7 @@ const PostAFlatPage = () => {
           <Grid item xs={12} sm={12} md={4}>
             <InputHelpar
               name="description"
-              label="description"
+              label="Description"
               fullWidth={true}
               sx={{ mb: 2 }}
             />

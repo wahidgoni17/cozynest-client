@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+CozyNest Flat Share Website
+Welcome to CozyNest, the ultimate flat-sharing platform designed to connect flat-owners with potential flat-mates. This README provides an overview of the features and functionalities of the CozyNest website.
 
-First, run the development server:
+Table of Contents
+Home Page/Landing Page
+Login & Registration
+Post Flat Info to Share (Private Page)
+Flat Details Page
+Flat Share Request Page (Private Page)
+My Profile
+6.1 My Flat Posts
+6.2 My Requests on Flat Posts
+Admin Dashboard
+Change Password Page
+About Us
+1. Home Page/Landing Page
+Header
+Logo: The website logo is prominently displayed.
+Navigation Bar:
+Home
+About Us
+Login/Register (if not logged in)
+My Profile (if logged in)
+Hero Section
+Catchy Headline: "Find Your Perfect Flat-mate Today!"
+Button: "Share Your Flat" button redirects to the Post Flat page.
+Searching Options
+Search Bar: Below the hero section, allowing users to search for flats by:
+Location
+Price range
+Number of bedrooms
+Flat Lists
+Flat Cards: Displays a list of flats available for sharing in card format. Each card includes:
+Flat's location
+Photo
+Brief description
+Price
+Number of bedrooms
+Link to the full flat details page
+Extra Sections
+Testimonials: Success stories from users who found flat-mates through the website.
+Tips: Advice for finding and sharing flats.
+Footer
+Contact Information: Email address, phone number, social media links.
+Copyright Information: Standard copyright details.
+Additional Links: Terms of Use, Privacy Policy, etc.
+2. Login & Registration
+Login Form
+Fields:
+Username or email address
+Password
+Registration Form
+Fields:
+Username
+Email address
+Password (with confirmation)
+3. Post Flat Info to Share (Private Page)
+Features
+Form Fields:
+Flat's location
+Detailed description
+Rent amount
+Number of bedrooms
+Amenities
+Upload photos
+Submit Button: Submit the flat information for listing.
+4. Flat Details Page
+Features
+Flat Information: Detailed information about the flat, including:
+Multiple photos
+Detailed description
+Rent amount
+Number of bedrooms
+Amenities
+Location
+Flat Share Request Button: Button to initiate a request to share the flat (redirects to Flat Share Request page).
+5. Flat Share Request Page (Private Page)
+Features
+Form Fields:
+User's contact information (prefilled from profile)
+Additional information
+Agreement to terms and conditions
+Submit Button: Submit the flat share request.
+6. My Profile
+User Account Information
+Edit Profile: Options to edit username and email.
+Change Password: Link to Change Password page.
+6.1 My Flat Posts
+List of flats the user has posted for sharing.
+Details for each flat:
+Flat's location
+Photo
+Brief description
+Rent amount
+Number of bedrooms
+Option to edit or delete the post
+6.2 My Requests on Flat Posts
+List of flats the user has requested to share.
+Details for each request:
+Flat's location
+Status of the request (pending, approved, rejected)
+7. Admin Dashboard
+User Management
+View and Manage User Accounts: Activate/deactivate accounts, edit roles.
+Flat Management
+View and Manage Flat Posts: Admins can edit or remove flat listings.
+8. Change Password Page
+Features
+Fields:
+Current password
+New password (with confirmation)
+9. About Us
+Content
+Mission Statement: Brief description of the website's purpose and mission.
+Team Information: Information about the team behind the website.
+Contact Information: Email address, phone number, social media links.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Live Link: https://cozynest-client.vercel.app

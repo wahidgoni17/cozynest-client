@@ -16,6 +16,13 @@ import FormHelpar from "@/components/Forms/FormHelpar";
 import { useState } from "react";
 import InputHelpar from "@/components/Forms/InputHelpar";
 
+type RegisterFormValues = {
+  name: string;
+  email: string;
+  password: string;
+  cpassword: string;
+};
+
 const validationSchema = z.object({
   name: z.string().min(1, "Please enter your name!"),
   email: z.string().email("Please enter a valid email address!"),
@@ -23,7 +30,7 @@ const validationSchema = z.object({
   cpassword: z.string().min(6, "Must be at least 6 characters"),
 });
 
-export const defaultValues = {
+const defaultValues: RegisterFormValues = {
   name: "",
   email: "",
   password: "",
@@ -38,8 +45,10 @@ const RegisterPage = () => {
     const { name, email, password, cpassword } = values;
 
     if (password !== cpassword) {
-      setError("Password is Not matched");
+      setError("Password is not matched");
+      return;
     }
+
     const data = { name, email, password };
 
     try {
