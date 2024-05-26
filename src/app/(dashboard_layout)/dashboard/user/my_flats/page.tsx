@@ -1,10 +1,10 @@
 "use client";
-import { useGetMyFlatPostsQuery } from "@/app/redux/api/profileApi";
+import { useGetMyFlatPostsQuery } from "@/redux/api/profileApi";
 import { Box, IconButton } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useDeleteAFlatMutation } from "@/app/redux/api/flatApi";
+import { useDeleteAFlatMutation } from "@/redux/api/flatApi";
 import { toast } from "sonner";
 
 const MyFlatPage = () => {

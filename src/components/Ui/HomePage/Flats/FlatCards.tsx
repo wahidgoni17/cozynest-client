@@ -64,7 +64,9 @@ const FlatCards = async () => {
                       paddingBottom: "20px",
                     }}
                   >
-                    <Button variant="outlined">View Details</Button>
+                    <Link href={`/flat_details/${flat.id}`}>
+                      <Button variant="outlined">View Details</Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
@@ -75,13 +77,15 @@ const FlatCards = async () => {
               textAlign: "center",
             }}
           >
-            <Link href="/all_flats"><Button
-              sx={{
-                marginTop: "30px",
-              }}
-            >
-              View ALL
-            </Button></Link>
+            <Link href="/all_flats">
+              <Button
+                sx={{
+                  marginTop: "30px",
+                }}
+              >
+                View ALL
+              </Button>
+            </Link>
           </Box>
         </Container>
       </Box>

@@ -5,7 +5,6 @@ export const flatApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     AddFlat: build.mutation({
       query: (data) => (
-        console.log(data),
         {
           url: "/flats/",
           method: "POST",

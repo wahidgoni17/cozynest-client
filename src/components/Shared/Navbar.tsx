@@ -4,12 +4,14 @@ import Image from "next/image";
 import logo from "@/assets/logo/icon.png";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { isLoggedIn } from "@/Services/auth.service";
 
 const Navbar = () => {
   const AuthButton = dynamic(
     () => import("@/components/Ui/AuthButton/AuthButton"),
     { ssr: false }
   );
+  const isLogin = isLoggedIn();
   return (
     <Box bgcolor="#e8f5e9">
       <Container>
@@ -39,7 +41,11 @@ const Navbar = () => {
               Home
             </Typography>
             <Typography>About Us</Typography>
-            <Typography component={Link} href="/dashboard">My Profile</Typography>
+            {isLogin && (
+              <Typography component={Link} href="/dashboard">
+                My Profile
+              </Typography>
+            )}
           </Stack>
           <Stack>
             <AuthButton />

@@ -1,5 +1,5 @@
 "use client"
-import { useGetAllFlatsQuery } from "@/app/redux/api/flatApi";
+import { useGetAllFlatsQuery } from "@/redux/api/flatApi";
 import { Box, IconButton } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import EditIcon from "@mui/icons-material/Edit";

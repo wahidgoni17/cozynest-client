@@ -1,7 +1,7 @@
 "use server";
 
-const getAllFlats = async () => {
-  const res = await fetch(`http://localhost:4000/api/flats/`);
+const getAllFlats = async (searchTerm: string) => {
+  const res = await fetch(`http://localhost:4000/api/flats?searchTerm=${searchTerm}`);
   const flatInfo = await res.json();
   return flatInfo;
 };

@@ -1,5 +1,4 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { FieldValues } from "react-hook-form";
@@ -7,7 +6,7 @@ import { z } from "zod";
 import KeyIcon from "@mui/icons-material/Key";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { useChangePasswordMutation } from "@/app/redux/api/authApi";
+import { useChangePasswordMutation } from "@/redux/api/authApi";
 import { logoutUser } from "@/Services/Actions/logoutUser";
 import FormHelpar from "@/components/Forms/FormHelpar";
 import InputHelpar from "@/components/Forms/InputHelpar";

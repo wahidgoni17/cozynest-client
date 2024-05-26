@@ -9,7 +9,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Stack } from "@mui/material";
 import SideBar from "./SideBar";
-import { useGetMyProfileQuery } from "@/app/redux/api/profileApi";
+import { useGetMyProfileQuery } from "@/redux/api/profileApi";
 import DropdownMenu from "./DropdownMenu";
 
 const drawerWidth = 240;

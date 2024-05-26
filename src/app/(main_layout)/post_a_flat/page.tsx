@@ -1,7 +1,6 @@
 "use client";
 import { addFlat } from "@/Services/Actions/addFlat";
 import { getUserInfo } from "@/Services/auth.service";
-import { useAddFlatMutation } from "@/app/redux/api/flatApi";
 import FormHelpar from "@/components/Forms/FormHelpar";
 import InputHelpar from "@/components/Forms/InputHelpar";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
@@ -26,7 +25,6 @@ const PostAFlatPage = () => {
   const { id } = getUserInfo();
 
   const router = useRouter();
-  const [addAFlat] = useAddFlatMutation();
   // console.log(id);
   const handleFormSubmit = async (values: FieldValues) => {
     const data = {
@@ -46,11 +44,10 @@ const PostAFlatPage = () => {
     console.log(data);
     try {
       const res = await addFlat(data)
-      // const res = await addAFlat(data)
       console.log(res);
       if (res?.data?.id) {
         toast.success("Flat is Posted Successfully!!!");
-        // router.push("/dashboard/admin/doctors");
+        router.push("/");
       }
     } catch (err: any) {
       console.error(err);
