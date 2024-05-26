@@ -40,7 +40,7 @@ const Navbar = () => {
             <Typography component={Link} href="/">
               Home
             </Typography>
-            <Typography>About Us</Typography>
+            <Typography component={Link} href="/about">About Us</Typography>
             {isLogin && (
               <Typography component={Link} href="/dashboard">
                 My Profile

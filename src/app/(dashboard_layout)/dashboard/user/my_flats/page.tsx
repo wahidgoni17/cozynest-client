@@ -6,6 +6,7 @@ import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDeleteAFlatMutation } from "@/redux/api/flatApi";
 import { toast } from "sonner";
+import Loader from "@/components/Shared/Loader";
 
 const MyFlatPage = () => {
   const { data, isLoading } = useGetMyFlatPostsQuery({});
@@ -53,10 +54,10 @@ const MyFlatPage = () => {
     <Box>
       {!isLoading ? (
         <Box my={2}>
-          <DataGrid rows={data} columns={columns} />
+          <DataGrid rows={data.data} columns={columns} />
         </Box>
       ) : (
-        <h1>Loading.....</h1>
+        <Loader />
       )}
     </Box>
   );

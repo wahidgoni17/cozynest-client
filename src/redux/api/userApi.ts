@@ -14,7 +14,7 @@ export const userApi = baseApi.injectEndpoints({
       query: (args) => ({
         url: `/user/status/${args.id}`,
         method: "PATCH",
-        body: args.data,
+        body: args.values,
       }),
       invalidatesTags: [tagTypes.user],
     }),
@@ -22,7 +22,7 @@ export const userApi = baseApi.injectEndpoints({
       query: (args) => ({
         url: `/user/role/${args.id}`,
         method: "PATCH",
-        body: args.data,
+        body: args.values,
       }),
       invalidatesTags: [tagTypes.user],
     }),

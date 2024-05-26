@@ -2,7 +2,7 @@
 import { FieldValues } from "react-hook-form";
 
 export const addRequest = async (data: FieldValues) => {
-  const res = await fetch(`http://localhost:4000/api/booking/booking-request`, {
+  const res = await fetch(`https://cozynest-server.vercel.app/api/booking/booking-request`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

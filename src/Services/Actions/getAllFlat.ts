@@ -1,7 +1,12 @@
 "use server";
 
 const getAllFlats = async (searchTerm: string) => {
-  const res = await fetch(`http://localhost:4000/api/flats?searchTerm=${searchTerm}`);
+  const res = await fetch(
+    `https://cozynest-server.vercel.app/api/flats?searchTerm=${searchTerm}`,
+    {
+      cache: "no-store",
+    }
+  );
   const flatInfo = await res.json();
   return flatInfo;
 };

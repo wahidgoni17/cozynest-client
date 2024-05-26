@@ -15,7 +15,10 @@ import Link from "next/link";
 
 const FlatCards = async () => {
   const res = await fetch(
-    `http://localhost:4000/api/flats?page=1&limit=3&sortBy=rent&sortOrder=desc`
+    `https://cozynest-server.vercel.app/api/flats?page=1&limit=3&sortBy=rent&sortOrder=desc`,
+    {
+      cache: "no-store",
+    }
   );
   const { data: flats } = await res.json();
   return (

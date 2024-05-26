@@ -20,11 +20,10 @@ const ChangePassword = () => {
   const [changePassword] = useChangePasswordMutation();
   const router = useRouter();
   
-  const onSubmit = async (values: FieldValues) => {
+  const onSubmit = async (data: FieldValues) => {
     try {
-      const res = await changePassword(values);
-
-      if ("data" in res && res.data.status === 200) {
+      const res = await changePassword(data);
+      if ("data" in res) {
         logoutUser(router);
         toast.success("Password Changed Successfully");
       } else {

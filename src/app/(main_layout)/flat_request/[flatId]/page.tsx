@@ -28,8 +28,7 @@ const FlatRequestPage = ({ params }: { params: any }) => {
   const handleFormSubmit = async (values: FieldValues) => {
     try {
       const res = await addRequest(data);
-      console.log(res);
-      if (res?.data?.id) {
+      if (res?.data?.data?.id) {
         toast.success("Flat Share Request Posted Successfully");
         router.push("/");
       } else {

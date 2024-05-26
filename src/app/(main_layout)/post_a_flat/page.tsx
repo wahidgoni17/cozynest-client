@@ -41,10 +41,9 @@ const PostAFlatPage = () => {
       image2: values.image2 || "",
       image3: values.image3 || "",
     };
-    console.log(data);
+
     try {
-      const res = await addFlat(data)
-      console.log(res);
+      const res = await addFlat(data);
       if (res?.data?.id) {
         toast.success("Flat is Posted Successfully!!!");
         router.push("/");

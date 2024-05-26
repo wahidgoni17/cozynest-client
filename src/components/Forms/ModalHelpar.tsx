@@ -43,7 +43,7 @@ export default function ModalHelpar({
         open={open}
         sx={{ ...sx }}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+        <DialogTitle sx={{ m: 0, p: 2, pr: 10 }} id="customized-dialog-title">
           {title}
         </DialogTitle>
         <IconButton

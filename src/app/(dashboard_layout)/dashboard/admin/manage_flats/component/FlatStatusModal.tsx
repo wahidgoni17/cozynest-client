@@ -6,28 +6,29 @@ import { Button } from "@mui/material";
 import React from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
+import { useUpdateAFlatMutation } from "@/redux/api/flatApi";
 
 type TProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   id: string;
-  defaultValue: string;
+  defaultValue?: string;
 };
 
-const StatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
-  const [updateStatus] = useChangeStatusMutation();
-  console.log(id);
+const FlatStatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
+  const [updateStatus] = useUpdateAFlatMutation();
   const handleFormSubmit = async (values: FieldValues) => {
     const res = await updateStatus({ values, id });
+    console.log(res);
     if (res?.data?.data?.id) {
-      toast.success("User Status Updated");
+      toast.success("Flat Status Updated");
     } else {
       toast.error("something went wrong");
     }
     setOpen(false);
   };
   return (
-    <ModalHelpar open={open} setOpen={setOpen} title="Change Status">
+    <ModalHelpar open={open} setOpen={setOpen} title="Change Flat Status">
       <FormHelpar onSubmit={handleFormSubmit}>
         <SelectHelpar
           size="medium"
@@ -38,7 +39,7 @@ const StatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
           name="status"
           defaultValue={defaultValue}
           label="Choose A Status"
-          items={["ACTIVE", "INACTIVE"]}
+          items={["PENDING", "APPROVED", "REJECTED"]}
         />
         <Button type="submit">Update</Button>
       </FormHelpar>
@@ -46,4 +47,4 @@ const StatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
   );
 };
 
-export default StatusModal;
+export default FlatStatusModal;

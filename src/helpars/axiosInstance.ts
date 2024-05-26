@@ -1,4 +1,4 @@
-import { IGenericErrorResponse, ResponseSuccessType } from "@/types";
+import {  ResponseSuccessType } from "@/types";
 import { getFromLocalStorage } from "@/utils/local-storage";
 import axios from "axios";
 
@@ -15,7 +15,6 @@ instance.interceptors.request.use(
     if (accessToken) {
       config.headers.Authorization = accessToken;
     }
-    console.log(config);
     return config;
   },
   function (error) {

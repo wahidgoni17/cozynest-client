@@ -5,7 +5,7 @@ import React from "react";
 
 const FlatDetailsPage = async ({ params }: { params: any }) => {
   const { flatId } = params;
-  const res = await fetch(`http://localhost:4000/api/flats/${flatId}`);
+  const res = await fetch(`https://cozynest-server.vercel.app/api/flats/${flatId}`);
 
   const flatInfo = await res.json();
   const { data: flat } = flatInfo;

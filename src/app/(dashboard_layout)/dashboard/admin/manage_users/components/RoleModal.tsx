@@ -1,4 +1,4 @@
-import { useChangeStatusMutation } from "@/redux/api/userApi";
+import { useChangeRoleMutation, useChangeStatusMutation } from "@/redux/api/userApi";
 import FormHelpar from "@/components/Forms/FormHelpar";
 import ModalHelpar from "@/components/Forms/ModalHelpar";
 import SelectHelpar from "@/components/Forms/SelectHelpar";
@@ -14,20 +14,19 @@ type TProps = {
   defaultValue: string;
 };
 
-const StatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
-  const [updateStatus] = useChangeStatusMutation();
-  console.log(id);
+const RoleModal = ({ open, setOpen, id, defaultValue }: TProps) => {
+  const [updateRole] = useChangeRoleMutation();
   const handleFormSubmit = async (values: FieldValues) => {
-    const res = await updateStatus({ values, id });
+    const res = await updateRole({ values, id });
     if (res?.data?.data?.id) {
-      toast.success("User Status Updated");
+      toast.success("User Role Updated");
     } else {
       toast.error("something went wrong");
     }
     setOpen(false);
   };
   return (
-    <ModalHelpar open={open} setOpen={setOpen} title="Change Status">
+    <ModalHelpar open={open} setOpen={setOpen} title="Change User Role">
       <FormHelpar onSubmit={handleFormSubmit}>
         <SelectHelpar
           size="medium"
@@ -35,10 +34,10 @@ const StatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
           sx={{
             my: 2,
           }}
-          name="status"
+          name="role"
           defaultValue={defaultValue}
-          label="Choose A Status"
-          items={["ACTIVE", "INACTIVE"]}
+          label="Choose A Role"
+          items={["ADMIN", "USER"]}
         />
         <Button type="submit">Update</Button>
       </FormHelpar>
@@ -46,4 +45,4 @@ const StatusModal = ({ open, setOpen, id, defaultValue }: TProps) => {
   );
 };
 
-export default StatusModal;
+export default RoleModal;

@@ -1,11 +1,21 @@
-import { axiosBaseQuery } from "@/helpars/axiosBaseQuery";
-import { createApi } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { tagTypesList } from "../tag-types";
+import { getFromLocalStorage } from "@/utils/local-storage";
 
-// Define a service using a base URL and expected endpoints
+const baseQuery = fetchBaseQuery({
+  baseUrl: "https://cozynest-server.vercel.app/api",
+  prepareHeaders: (headers) => {
+    const token = getFromLocalStorage("accessToken");
+    if (token) {
+      headers.set("authorization", `${token}`);
+    }
+    return headers;
+  },
+});
+
 export const baseApi = createApi({
   reducerPath: "api",
-  baseQuery: axiosBaseQuery({ baseUrl: "http://localhost:4000/api" }),
+  baseQuery,
   endpoints: () => ({}),
   tagTypes: tagTypesList,
 });

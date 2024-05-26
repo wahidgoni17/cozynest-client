@@ -78,7 +78,7 @@ export default function DashboardDrawer({
                   component="h5"
                   sx={{ color: "#000" }}
                 >
-                  Hi, {data?.user?.name}
+                  Hi, {data?.data?.user?.name}
                 </Typography>
               )}
             </Box>

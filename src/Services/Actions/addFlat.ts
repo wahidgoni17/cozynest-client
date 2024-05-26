@@ -2,7 +2,7 @@
 import { FieldValues } from "react-hook-form";
 
 export const addFlat = async (data: FieldValues) => {
-  const res = await fetch(`http://localhost:4000/api/flats/`, {
+  const res = await fetch(`https://cozynest-server.vercel.app/api/flats/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

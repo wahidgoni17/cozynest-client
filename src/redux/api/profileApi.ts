@@ -35,7 +35,7 @@ export const profileAPi = baseApi.injectEndpoints({
         return {
           url: "/profile/update-profile",
           method: "PATCH",
-          data,
+          body: data,
         };
       },
       invalidatesTags: [tagTypes.profile],

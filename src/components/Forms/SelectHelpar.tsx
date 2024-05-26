@@ -8,6 +8,7 @@ interface ITextField {
   placeholder?: string;
   label?: string;
   required?: boolean;
+  defaultValue?: string
   fullWidth?: boolean;
   sx?: SxProps;
   items: string[];
@@ -19,6 +20,7 @@ const SelectHelpar = ({
   label,
   size = "small",
   required,
+  defaultValue,
   fullWidth = true,
   sx,
 }: ITextField) => {
@@ -38,6 +40,7 @@ const SelectHelpar = ({
           size={size}
           select
           label={label}
+          defaultValue={defaultValue}
           required={required}
           fullWidth={fullWidth}
           error={isError}

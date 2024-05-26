@@ -17,7 +17,7 @@ export const flatApi = baseApi.injectEndpoints({
       query: (args) => ({
         url: `/flats/${args.id}`,
         method: "PATCH",
-        body: args.data,
+        body: args.values,
       }),
       invalidatesTags: [tagTypes.flat],
     }),
